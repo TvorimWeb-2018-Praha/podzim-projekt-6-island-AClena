@@ -13,31 +13,398 @@ body {
     padding: 0;
     background-color: #f5f5f5;
     font-family: 'Merriweather', serif;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.6;
 }
 
+h2 {
+    font-size: 25px;
+    font-family: 'Raleway', serif;
+    margin: 0;
+    padding: 20px 0 40px;
+}
+
+h2:after {
+    position: absolute;
+    left: 0;
+    content: "";
+    display: block;  
+    width: 70px;  
+    padding-bottom: 20px;
+    border-bottom: 4px solid rgba(28, 121, 243, 0.55);
+}
+
+.fotogalerie h2 {
+    padding-left: 20px;
+    padding-bottom: 55px;
+}
 
 /* HLAVICKA */
 
-.titulek {
-    font-family: 'Raleway', serif;
+.header {
+    color: white;
+    text-align: center;
+   
+    background-image: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.3)
+        ),
+        url(images/island-hlavicka.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    padding: 20px 30px;
 }
 
+h1 {
+    font-family: 'Raleway', serif;
+    font-size: 50px;
+    margin: 0;
+}
+
+.perex {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.autor {
+    opacity: 0.7;
+    font-style: italic;
+}
+
+.autor:before {
+    content: "";
+    display: block;  /*  vlastní řádek  */
+    margin: 0 auto;  /*  vycentrování  */
+    width: 70px;  /*  délka  */
+    padding-top: 12px;
+    border-top: 2px solid white;
+}
 
 /* MENU */
 
+.menu-obal {
+    font-size: 13px;
+    font-family: 'Raleway', serif;
+    font-stretch: semi-condensed;
+    text-align: center;
+    text-transform: uppercase;
+}
 
+.menu-obal ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+} 
 
+.menu-obal li {
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(182, 181, 181, 0.1);
+}
+
+.menu-obal a {
+    display: block;
+    
+    color: rgb(182, 181, 181);
+    text-decoration: none;
+}
+
+.menu-obal a:hover {
+    color: gray;
+}
 
 /* OBSAH */
 
+.content {
+    position: relative;
+    background-color: white;
+    margin: 0;
+    box-shadow: 0 2px 40px rgba(7, 7, 7, 0.12);
+}
 
+.content .menu-obal {
+    padding: 30px 40px 0 30px;
+}
 
+.odstavec {
+    padding: 20px 20px;
+}
+
+.obrazky, .foto {
+    text-align: center;
+}
+
+.obrazek, .foto img {
+    width: 100%;
+    height: auto;
+}
+
+.popisek {
+    color: gray;
+    font-family: 'Raleway', serif;
+    font-size: 12px;
+    margin: 0;
+}
+
+.popisek a {
+    color: gray;
+}
 
 /* FOTOGALERIE */
 
+.foto .popisek  {
+    font-size: 11px;
+    line-height: 1.4;
+    padding: 5px 0 20px 0;
+}
 
-
+.foto .popisek::first-line {
+    font-size: 12px;
+    font-weight: bold;
+}
 
 /* PATICKA */
+
+.footer {
+    color: gray;
+    font-size: 11px;
+    padding: 20px 20px 10px 20px;
+}
+
+.footer a {
+    color: gray;
+}
+
+
+/* ---------------------------- */
+
+@media screen and (min-width: 500px) {
+
+    body {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    /* HLAVIČKA */
+
+    h1 {
+        font-size: 70px;
+    }
+
+    .header {
+        background-position: 100% 0%;
+        padding: 20px 30px 30px;
+    }
+    
+    /* MENU */
+    
+    .menu-obal {
+        padding: 0 40px;
+    }
+
+    .menu-obal ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-top: 1px solid rgba(182, 181, 181, 0.1);
+        border-bottom: 1px solid rgba(182, 181, 181, 0.1);
+    }
+
+    .menu-obal li {
+        border: none;
+        padding: 6px 36px;
+    }
+    
+    .menu-obal li:nth-child(2) {
+        border: none;
+        border-right: 1px solid rgba(182, 181, 181, 0.1);
+        border-left: 1px solid rgba(182, 181, 181, 0.1);
+    }
+
+    .menu-obal li:nth-child(3) {
+        border-right: 1px solid rgba(182, 181, 181, 0.1);
+    }
+
+    /* OBRÁZKY */
+
+    .obrazky {
+        position: relative;
+    }
+
+    .obrazky .popisek {
+        position: absolute;
+        right: 13px;
+        bottom: 13px;
+
+        color: white;
+        font-size: 11px;
+    }
+
+    .popisek a {
+        color: white;
+    }
+
+    /* GALERIE */
+
+    .galerie {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .foto {
+        position: relative;
+        width: 50%;
+        overflow: hidden;
+    }
+
+    .foto img {
+        display: block; 
+    }
+
+    .foto .popisek {
+        position: absolute;
+        width: 100%;
+        
+        color: white;
+        background-color: rgba(17, 17, 17, 0.349);
+        
+        padding: 8px 0;
+        transition: 0.5s;
+    }
+
+    .foto:hover .popisek {
+        transform: translateY(-100%); /*  = translate(0, -100%) */
+        transition: 0.5s ease-out;
+    }
+
+}
+
+/* ---------------------------- */
+
+@media screen and (min-width: 1000px) {
+
+    /* HLAVIČKA */
+
+    h1 {
+        font-size: 90px;
+    }
+
+    .header {
+        height: 520px;
+        padding: 70px 25% 90px;
+    }
+
+    .autor:before {
+        padding-top: 15px;
+    }
+
+    /* MENU */
+
+    .menu-obal{
+        float: left;
+    }
+
+    .menu-obal ul {
+        display: block;
+        text-align: left;
+        border: none;
+    }
+
+    .menu-obal li {
+        border-right: none;
+        padding: 0;
+    }
+
+    .menu-obal a {
+        border-bottom: 1px solid rgba(182, 181, 181, 0.1);
+        padding: 6px 0;
+    }
+
+    /* OBSAH */
+    
+    h2 {
+        font-size: 35px;
+    }
+
+    h2:after {
+        width: 100px;  
+    }
+
+    .fotogalerie h2 {
+        padding-left: 40px;
+    }
+
+    .pravy h2 {
+        padding-bottom: 15px;
+    }
+
+    .pravy h2:after {
+        position: relative;
+        left: -40px;
+    }
+
+    .content {
+        width: 960px;
+        margin: 0 auto;
+        margin-top: -70px;
+    }
+
+    .content .menu-obal {
+        padding: 46px 0 0 50px;
+    }
+    
+    .odstavec {
+        padding: 30px 50px;
+    }
+
+    .pravy {
+        padding-left: 250px;
+    }
+
+    .levy {
+        padding-right: 250px;
+    }
+
+    .obrazky .popisek {
+        right: 15px;
+        bottom: 25px;
+    }
+
+    /* GALERIE */
+    
+    .galerie {
+        flex-wrap: wrap;   /*  z nějakého důvodu jinak nefunguje, i když nastaveno výše  */
+    }
+
+    .foto {
+        width: 33.3%;
+    }
+
+    .foto img {
+        transition: 0.5s ease-in-out;
+    }
+
+    .foto:hover img {
+        transform: scale(1.3);   /*  přiblížení obrázku  */
+        transition: 0.5s ease-in-out;
+    }
+
+    .foto .popisek::first-line {
+        font-size: 14px;
+    }
+
+    /* PATIČKA */
+
+    .footer {
+        font-size: 14px;
+        width: 960px;
+        margin: 0 auto;
+        padding-left: 0;
+    }
+
+}
